@@ -1,6 +1,11 @@
 <?php
 
 namespace AnSyS\Elements;
+use Contao\StringUtil;
+use Contao\System;
+use Contao\Config;
+use Contao\FilesModel;
+
 
 /**
  * Front end content element "text".
@@ -42,6 +47,56 @@ class ContentTextLink extends \ContentElement
 			{
 				$this->singleSRC = $objModel->path;
 				$this->addImageToTemplate($this->Template, $this->arrData, null, null, $objModel);
+			}
+		}
+
+		if($this->url)
+		{
+			if (0 === strncmp($this->url, 'mailto:', 7))
+			{
+					$this->url = StringUtil::encodeEmail($this->url);
+			}
+			else
+			{
+					$this->url = ampersand($this->url);
+			}
+
+			$embed = explode('%s', $this->embed);
+
+			if ($this->rel)
+			{
+					$this->Template->attribute = ' data-lightbox="'. $this->rel .'"';
+			}
+
+			if ($this->linkTitle == '')
+			{
+					$this->linkTitle = $this->url;
+			}
+
+			$this->Template->href = $this->url;
+			$this->Template->embed_pre = $embed[0];
+			$this->Template->embed_post = $embed[1];
+			$this->Template->link = $this->linkTitle;
+			$this->Template->target = '';
+			$this->Template->rel = '';
+
+			if ($this->titleText)
+			{
+					$this->Template->linkTitle = StringUtil::specialchars($this->titleText);
+			}
+
+			// Override the link target
+			if ($this->target)
+			{
+					$this->Template->target = ' target="_blank"';
+					$this->Template->rel = ' rel="noreferrer noopener"';
+			}
+
+			// Unset the title attributes in the back end (see #6258)
+			if (TL_MODE == 'BE')
+			{
+					$this->Template->title = '';
+					$this->Template->linkTitle = '';
 			}
 		}
 	}
