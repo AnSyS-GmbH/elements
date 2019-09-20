@@ -13,7 +13,7 @@
   <?php if ($this->addBefore): ?>
     <?= $this->text ?>
   <?php endif; ?>
-<h2>Hallo 2</h2>
+
   <?php if ($this->href): ?>
     <?= $this->embed_pre ?>
     <a href="<?= $this->href ?>" class="hyperlink_txt" title="<?= $this->linkTitle ?>"<?= $this->attribute ?><?= $this->target ?><?= $this->rel ?>><?= $this->link ?></a>

@@ -2,6 +2,8 @@
 
 namespace AnSyS\Elements;
 
+use Contao\BackendTemplate;
+
 /**
  * Front end content element "wrapper" (wrapper start).
  *
@@ -30,7 +32,7 @@ class ContentWrapperStart extends \ContentElement
 		}
 
 		// Wrapper configuration
-		$this->Template->config = $this->sliderDelay . ',' . $this->sliderSpeed . ',' . $this->sliderStartSlide . ',' . $this->sliderContinuous;
+		//$this->Template->config = $this->sliderDelay . ',' . $this->sliderSpeed . ',' . $this->sliderStartSlide . ',' . $this->sliderContinuous;
 	}
 }
 

@@ -2,6 +2,8 @@
 
 namespace AnSyS\Elements;
 
+use Contao\BackendTemplate;
+
 /**
  * Front end content element "wrapper" (wrapper stop).
  *
