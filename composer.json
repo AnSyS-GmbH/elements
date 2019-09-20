@@ -21,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "AnSyS\\TestBundle\\": "src/"
+            "AnSyS\\Elements\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AnSyS\\TestBundle\\Tests\\": "tests/"
+            "AnSyS\\Elements\\Tests\\": "tests/"
         }
     },
     "support": {
