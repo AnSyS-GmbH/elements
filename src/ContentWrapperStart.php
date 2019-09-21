@@ -28,11 +28,15 @@ class ContentWrapperStart extends \ContentElement
 			$this->strTemplate = 'be_wildcard';
 
 			$this->Template = new BackendTemplate($this->strTemplate);
-			$this->Template->title = $this->headline;
+                        $s="";
+			if($this->cssID[0])
+                          $s=$s . "ID=" . $this->cssID[0] . " ";
+			if($this->cssID[1])
+                          $s=$s . "Style=" . $this->cssID[1] . " ";
+			if($this->headline)
+                          $s=$s . $this->headline;
+			$this->Template->title = $s;
 		}
-
-		// Wrapper configuration
-		//$this->Template->config = $this->sliderDelay . ',' . $this->sliderSpeed . ',' . $this->sliderStartSlide . ',' . $this->sliderContinuous;
 	}
 }
 
