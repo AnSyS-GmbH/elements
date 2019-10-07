@@ -15,9 +15,11 @@
   <?php endif; ?>
 
   <?php if ($this->href): ?>
+    <div class="hyperlink">
     <?= $this->embed_pre ?>
-    <a href="<?= $this->href ?>" class="hyperlink_txt" title="<?= $this->linkTitle ?>"<?= $this->attribute ?><?= $this->target ?><?= $this->rel ?>><?= $this->link ?></a>
+    <a href="<?= $this->href ?>" title="<?= $this->linkTitle ?>"<?= $this->attribute ?><?= $this->target ?><?= $this->rel ?>><?= $this->link ?></a>
     <?= $this->embed_post ?>
+    </div>
   <?php endif; ?>
 
 <?php $this->endblock(); ?>

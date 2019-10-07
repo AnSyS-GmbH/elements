@@ -1,6 +1,6 @@
 <?php
 
-$GLOBALS['TL_CTE']['texts']['textLink'] = 'AnSyS\Elements\ContentTextLink';
+$GLOBALS['TL_CTE']['texts']['text_link'] = 'AnSyS\Elements\ContentTextLink';
 $GLOBALS['TL_CTE']['wrapper']['wrapperStart'] = 'AnSyS\Elements\ContentWrapperStart';
 $GLOBALS['TL_CTE']['wrapper']['wrapperStop'] = 'AnSyS\Elements\ContentWrapperStop';
 
