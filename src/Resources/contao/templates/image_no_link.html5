@@ -1,0 +1,7 @@
+
+<figure class="image_container<?php echo $this->floatClass; ?>"<?php if ($this->margin) { ?> style="<?php echo $this->margin; ?>"<?php } ?>>
+  <?php $this->insert('picture_default', $this->picture); ?>
+  <?php if ($this->caption) { ?>
+    <figcaption class="caption"><?php echo $this->caption; ?></figcaption>
+  <?php } ?>
+</figure>
